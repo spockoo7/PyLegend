@@ -273,6 +273,12 @@ def fine_tune_model(model, X, y, log_file_path, intercept_adjustment=0.0):
         log_data(f"Erreur lors de l'affinage du modèle: {e}", log_file_path)
         return None, None, None
 
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import make_scorer, mean_squared_error
+from sklearn.model_selection import cross_val_score
+
 def cross_val_score_with_cv(X, y, model=None, scoring=None, cv=5):
     """
     Évalue un modèle en utilisant la validation croisée et une métrique de scoring personnalisée.
@@ -292,9 +298,9 @@ def cross_val_score_with_cv(X, y, model=None, scoring=None, cv=5):
     
     Retourne :
     - float
-       # Erreur moyenne de validation croisée du modèle.
+        Erreur moyenne de validation croisée du modèle.
     """
-    # Vérifier que X et y sont des tableaux numpy
+    # Vérifier que X et y sont des tableaux numpy ou pandas
     if not isinstance(X, (np.ndarray, pd.DataFrame)):
         raise TypeError("X doit être un tableau numpy ou un DataFrame pandas.")
     if not isinstance(y, (np.ndarray, pd.Series)):
@@ -314,12 +320,6 @@ def cross_val_score_with_cv(X, y, model=None, scoring=None, cv=5):
     
     # Exécuter la validation croisée
     try:
-        scores = cross_val_score(model, X, y, cv=cv, scoring=scoring)
-        return -np.mean(scores)  # Retourner la moyenne des scores (l'erreur quadratique moyenne)
-    except Exception as e:
-        raise RuntimeError(f"Une erreur est survenue lors de la validation croisée : {e}")
-
-try:
         scores = cross_val_score(model, X, y, cv=cv, scoring=scoring)
         return -np.mean(scores)  # Retourner la moyenne des scores (l'erreur quadratique moyenne)
     except Exception as e:
