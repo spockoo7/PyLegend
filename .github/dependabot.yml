@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm" # ou un autre écosystème comme "pip", "maven", etc.
-    directory: "/main" # Dossier où se trouvent les fichiers de dépendances
+    directory: "/main/Py-Legend" # Dossier où se trouvent les fichiers de dépendances
     schedule:
       interval: "daily" # Intervalle des vérifications de mises à jour (quotidien)
       time: "00:00" # Heure de démarrage (minuit)
