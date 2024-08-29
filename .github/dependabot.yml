@@ -117,4 +117,4 @@ updates:
       - dependency-type: "direct"
       - dependency-type: "production"
     target-branch: "component-updates"
-    versions: ["1.x", "2.x"]
+    versions: ["1.x"]
