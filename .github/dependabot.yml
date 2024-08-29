@@ -5,19 +5,117 @@
 
 version: 2
 updates:
+  - package-ecosystem: "npm"
     directory: "/main" # Location of package manifests
     schedule:
-    interval: "daily"
-    time: "21:30"
-    timezone: "UTC"
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "bundler"
+    directory: "/main"
     schedule:
-    interval: "daily"
-    time: "18:30"
-    timezone: "America/Los_Angeles"
-    Allow:
-    - package-ecosystem: "npm, bundler, composer, devcontainers, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule, github-actions, pip, terraform, pub, swift"
-      Depedency-type: Direct
-      Depedency-type: Production #only correction, don't add more depedency
-      Target-branch: "component-updates"
-      versioning-strategy: increase-if-necessary
-      versions: ["4.x", "5.x"]
+      interval: "daily"
+      time: "18:50"
+      timezone: "America/Los_Angeles"
+  - package-ecosystem: "composer"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "devcontainers"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "maven"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "mix"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "cargo"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "gradle"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "nuget"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "gomod"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "docker"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "elm"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "gitsubmodule"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "github-actions"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "pip"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "terraform"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "pub"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+  - package-ecosystem: "swift"
+    directory: "/main"
+    schedule:
+      interval: "daily"
+      time: "21:50"
+      timezone: "UTC"
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "production"
+    target-branch: "component-updates"
+    versioning-strategy: "increase-if-necessary"
+    versions: ["4.x", "5.x"]
