@@ -16,4 +16,4 @@ updates:
       interval: "weekly" # Vérifier les mises à jour chaque semaine
     ignore:
       - dependency-name: "numpy" # Exemple d'ignorance d'une dépendance spécifique
-        versions: ["<1.25.0"] # Ignorer les mises à jour pour les versions inférieures à 1.25.0
+        versions: ["<1.25.0"]
