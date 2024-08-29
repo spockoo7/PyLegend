@@ -118,4 +118,4 @@ updates:
       - dependency-type: "production"
     target-branch: "component-updates"
     versioning-strategy: "increase-if-necessary"
-    versions: ["4.x", "5.x"]
+    versions: ["1.x", "2.x"]
