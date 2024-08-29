@@ -1,13 +1,13 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/main" # Chemin vers le manifeste des packages
+  - package-ecosystem: "npm" # ou un autre écosystème comme "pip", "maven", etc.
+    directory: "/" # Dossier où se trouvent les fichiers de dépendances
     schedule:
-      interval: "daily" # Intervalle de mise à jour
-      time: "21:30" # Heure de mise à jour
-      timezone: "UTC" # Fuseau horaire
+      interval: "daily" # Intervalle des vérifications de mises à jour (quotidien)
+      time: "00:00" # Heure de démarrage (minuit)
+      timezone: "America/Toronto" # Fuseau horaire pour le Québec
     allow:
-      - dependency-type: "direct" # Met à jour les dépendances directes
-      - dependency-type: "production" # Met à jour les dépendances en production
-    target-branch: "component-updates" # Branche cible pour les mises à jour
+      - dependency-type: "direct" # Ne met à jour que les dépendances directes
+      - dependency-type: "production" # Met à jour les dépendances de production
+    target-branch: "main" # Branche cible pour les mises à jour
     versioning-strategy: "increase-if-necessary" # Stratégie de versioning
