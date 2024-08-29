@@ -1,13 +1,19 @@
 version: 2
 updates:
-  - package-ecosystem: "npm" # ou un autre écosystème comme "pip", "maven", etc.
-    directory: "/main/Py-Legend" # Dossier où se trouvent les fichiers de dépendances
+  - package-ecosystem: "pip" # Indique que nous utilisons pip pour la gestion des dépendances
+    directory: "/" # Le répertoire où se trouvent les fichiers de configuration des dépendances
     schedule:
-      interval: "daily" # Intervalle des vérifications de mises à jour (quotidien)
-      time: "00:00" # Heure de démarrage (minuit)
-      timezone: "America/Toronto" # Fuseau horaire pour le Québec
-    allow:
-      - dependency-type: "direct" # Ne met à jour que les dépendances directes
-      - dependency-type: "production" # Met à jour les dépendances de production
-    target-branch: "main" # Branche cible pour les mises à jour
-    versioning-strategy: "increase-if-necessary" # Stratégie de versioning
+      interval: "daily" # Vérifier les mises à jour tous les jours
+    ignore:
+      - dependency-name: "tensorflow" # Exemple d'ignorance d'une dépendance spécifique
+        versions: ["<2.0.0"] # Ignorer les mises à jour pour les versions inférieures à 2.0.0
+      - dependency-name: "cirq" # Exemple d'ignorance d'une autre dépendance
+        versions: ["<1.0.0"]
+
+  - package-ecosystem: "pip" # Indique que nous utilisons pip pour la gestion des dépendances
+    directory: "/" # Le répertoire où se trouvent les fichiers de configuration des dépendances
+    schedule:
+      interval: "weekly" # Vérifier les mises à jour chaque semaine
+    ignore:
+      - dependency-name: "numpy" # Exemple d'ignorance d'une dépendance spécifique
+        versions: ["<1.25.0"] # Ignorer les mises à jour pour les versions inférieures à 1.25.0
