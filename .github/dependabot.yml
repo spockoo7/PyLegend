@@ -5,7 +5,7 @@
 
 version: 20
 updates:
-  -package-ecosystem: "Tensorflow" # See documentation for possible values
+   package-ecosystem: "Tensorflow" # See documentation for possible values
     directory: "/main" # Location of package manifests
     schedule:
      -interval: "daily"
