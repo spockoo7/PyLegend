@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "pip" # Indique que nous utilisons pip pour la gestion des dépendances
-    directory: "/" # Le répertoire où se trouvent les fichiers de configuration des dépendances
+    directory: "/main" # Le répertoire où se trouvent les fichiers de configuration des dépendances
     schedule:
       interval: "daily" # Vérifier les mises à jour tous les jours
     ignore:
