@@ -3,9 +3,26 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
-version: 2
+version: 20
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "Tensorflow" # See documentation for possible values
+    directory: "/main" # Location of package manifests
     schedule:
       interval: "daily"
+      time: "21:10"
+      timezone: "UTC"
+      schedule:
+        interval: "daily"
+        time: "18:00"
+        timezone: "America/Los_Angeles"
+      Allow:
+       - Depedency-type: Direct
+       - Depedency-type: Production #only correction, don't add more depedency
+        Target-branch: "component-updates"
+        versioning-strategy: increase-if-necessary
+        ignore:
+      - dependency-name: "express"
+        # For Express, ignore all Dependabot updates for version 4 and 5
+        versions: ["4.x", "5.x", "6.x", "7.x", "8.x","9.x"]
+        
+        
