@@ -1,13 +1,13 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/main" # Location of package manifests
+    directory: "/main" # Chemin vers le manifeste des packages
     schedule:
-      interval: "daily"
-      time: "21:30"
-      timezone: "UTC"
+      interval: "daily" # Intervalle de mise à jour
+      time: "21:30" # Heure de mise à jour
+      timezone: "UTC" # Fuseau horaire
     allow:
-      - dependency-type: "direct"
-      - dependency-type: "production"
-    target-branch: "component-updates"
-    versioning-strategy: "increase-if-necessary"
+      - dependency-type: "direct" # Met à jour les dépendances directes
+      - dependency-type: "production" # Met à jour les dépendances en production
+    target-branch: "component-updates" # Branche cible pour les mises à jour
+    versioning-strategy: "increase-if-necessary" # Stratégie de versioning
