@@ -5,15 +5,15 @@
 
 version: 20
 updates:
-   package-ecosystem: "Tensorflow" # See documentation for possible values
+  - package-ecosystem: "Tensorflow" # See documentation for possible values
     directory: "/main" # Location of package manifests
     schedule:
      -interval: "daily"
-      time: "21:10"
+      time: "21:30"
       timezone: "UTC"
       schedule:
         interval: "daily"
-        time: "18:00"
+        time: "18:30"
         timezone: "America/Los_Angeles"
       Allow:
          Depedency-type: Direct
