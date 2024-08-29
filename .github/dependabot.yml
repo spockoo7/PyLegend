@@ -5,7 +5,6 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm, bundler, composer, devcontainers, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule, github-actions, pip, terraform, pub, swift" # See documentation for possible values
     directory: "/main" # Location of package manifests
     schedule:
     interval: "daily"
@@ -16,6 +15,7 @@ updates:
     time: "18:30"
     timezone: "America/Los_Angeles"
     Allow:
+     - package-ecosystem: "npm, bundler, composer, devcontainers, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule, github-actions, pip, terraform, pub, swift"
       Depedency-type: Direct
       Depedency-type: Production #only correction, don't add more depedency
       Target-branch: "component-updates"
