@@ -3,7 +3,7 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
-version: 20
+version: 2
 updates:
   - package-ecosystem: "Tensorflow, Tensorflow, npm, bundler, composer, devcontainers, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule, github-actions, pip, terraform, pub, swift" # See documentation for possible values
     directory: "/main" # Location of package manifests
