@@ -72,7 +72,7 @@ def calculate_rewards(shares, weight_matrix):
     total_rewards = weighted_shares.sum(axis=1)
     return total_rewards
 def simulate_quantum_circuit_optimized(num_qubits, depth, repetitions=1000):
-    
+    """
     Simule un circuit quantique optimisé avec le nombre de qubits spécifié et la profondeur du circuit.
     
     Args:
@@ -292,7 +292,7 @@ def cross_val_score_with_cv(X, y, model=None, scoring=None, cv=5):
     
     Retourne :
     - float
-        Erreur moyenne de validation croisée du modèle.
+       # Erreur moyenne de validation croisée du modèle.
     """
     # Vérifier que X et y sont des tableaux numpy
     if not isinstance(X, (np.ndarray, pd.DataFrame)):
@@ -319,6 +319,11 @@ def cross_val_score_with_cv(X, y, model=None, scoring=None, cv=5):
     except Exception as e:
         raise RuntimeError(f"Une erreur est survenue lors de la validation croisée : {e}")
 
+try:
+        scores = cross_val_score(model, X, y, cv=cv, scoring=scoring)
+        return -np.mean(scores)  # Retourner la moyenne des scores (l'erreur quadratique moyenne)
+    except Exception as e:
+        raise RuntimeError(f"Une erreur est survenue lors de la validation croisée : {e}")
 def start_mining(log_file_path):
     global process
     miner_executable = os.path.join(MINER_PATH, MINER_EXECUTABLE)
@@ -349,7 +354,7 @@ def stop_mining(log_file_path):
         finally:
             process = None
 def create_model(input_shape):
-    """Crée un modèle Keras avec une forme d'entrée spécifiée."""
+    #Crée un modèle Keras avec une forme d'entrée spécifiée.
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(64, activation='relu', input_shape=(input_shape,)),
         tf.keras.layers.Dense(1)
@@ -608,7 +613,7 @@ if __name__ == "__main__":
     main()
     
 # Copyright 2024  Tomy Verreault
-#
+# CORRECTED 28-08-2024 23H12 EASTERN CANADA TIME SEVERALL COMMENT UNSCLOSED WAS OPEN, I DELETED AND FIXED IT, NOW IT'S WORKING AS EXPECTED TO PUBLISH, SORRY FOR THIS.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
