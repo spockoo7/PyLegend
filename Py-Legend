@@ -72,7 +72,7 @@ def calculate_rewards(shares, weight_matrix):
     total_rewards = weighted_shares.sum(axis=1)
     return total_rewards
 def simulate_quantum_circuit_optimized(num_qubits, depth, repetitions=1000):
-    """
+    
     Simule un circuit quantique optimisé avec le nombre de qubits spécifié et la profondeur du circuit.
     
     Args:
